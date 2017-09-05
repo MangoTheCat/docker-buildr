@@ -4,8 +4,12 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libxml2-dev \ 
   libssl-dev \
   libcurl4-openssl-dev \
-  && . /etc/environment
+  && . /etc/environment \
+  && install2.r --error \
+    --repos 'http://www.bioconductor.org/packages/release/bioc' \
+    --repos $MRAN \ 
+    remotes
 
 WORKDIR /home/docker
 
-ENTRYPOINT ["pkg/build.R"]
+ENTRYPOINT ["pkg/build.R", "pkg"]
