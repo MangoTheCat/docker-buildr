@@ -12,6 +12,6 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 
 COPY build.sh /home/docker/
 
-WORKDIR /home/docker
+#WORKDIR /home/docker
 
-ENTRYPOINT ["/home/docker/build.sh"]
+#ENTRYPOINT ["/home/docker/build.sh"]
