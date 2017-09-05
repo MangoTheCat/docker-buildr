@@ -6,6 +6,6 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libcurl4-openssl-dev \
   && . /etc/environment
 
-WORKDIR /home/docker/pkg
+WORKDIR /home/docker
 
-ENTRYPOINT ["./build.R"]
+ENTRYPOINT ["pkg/build.R"]
