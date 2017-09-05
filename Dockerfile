@@ -10,6 +10,8 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
     --repos $MRAN \ 
     remotes
 
+COPY build.sh /home/docker/
+
 WORKDIR /home/docker
 
-ENTRYPOINT ["pkg/build.R", "pkg"]
+ENTRYPOINT ["/home/docker/build.sh"]
