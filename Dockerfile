@@ -5,7 +5,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libssl-dev \
   libcurl4-openssl-dev \
   wget \
-  && wget https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb \
+  && wget -q https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb \
   && dpkg -i pandoc-1.19.2.1-1-amd64.deb \
   && rm pandoc-1.19.2.1-1-amd64.deb \
   && . /etc/environment \
