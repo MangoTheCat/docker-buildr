@@ -1,4 +1,4 @@
-FROM rocker/r-ver:3.4.3
+FROM rocker/r-ver:3.5.1
 
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libxml2-dev \ 
@@ -6,6 +6,8 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libcurl4-openssl-dev \
   wget \
   subversion \
+  git \
+  zlib1g-dev \
   && wget -q https://github.com/jgm/pandoc/releases/download/1.19.2.1/pandoc-1.19.2.1-1-amd64.deb \
   && dpkg -i pandoc-1.19.2.1-1-amd64.deb \
   && rm pandoc-1.19.2.1-1-amd64.deb \
