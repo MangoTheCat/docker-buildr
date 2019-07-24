@@ -8,9 +8,9 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   subversion \
   git \
   zlib1g-dev \
-  && wget -q https://github.com/jgm/pandoc/releases/download/2.5/pandoc-2.5-1-amd64.deb \
-  && dpkg -i pandoc-2.5-1-amd64.deb \
-  && rm pandoc-2.5-1-amd64.deb \
+  && wget -q https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb \
+  && dpkg -i pandoc-2.7.3-1-amd64.deb \
+  && rm pandoc-2.7.3-1-amd64.deb \
   && . /etc/environment \
   && install2.r --error \
     --repos 'http://www.bioconductor.org/packages/release/bioc' \
