@@ -41,7 +41,7 @@ jobs:
 
   buildr-reticulate:
     runs-on: ubuntu-latest
-    needs: buildr
+    needs: buildr-tidyverse
     steps:
     - name: Checkout
       uses: actions/checkout@v2

@@ -1,4 +1,4 @@
-FROM mangothecat/buildr:3.6.3
+FROM mangothecat/buildr-tidyverse:3.6.3
 
 # Python (3), and virtualenv
 RUN apt-get update -qq \
