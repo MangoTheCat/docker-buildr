@@ -1,6 +1,4 @@
-ARG R_VER
-
-FROM mangothecat/buildr-reticulate:$R_VER
+FROM mangothecat/buildr-reticulate:3.6.3
 
 # Debian chromium appears to be too old
 RUN apt-get update -qq \
