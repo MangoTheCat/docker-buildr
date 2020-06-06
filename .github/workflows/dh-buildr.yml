@@ -19,5 +19,6 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: mangothecat/buildr
+        path: ./buildr
         tag_with_ref: true
         push: true
