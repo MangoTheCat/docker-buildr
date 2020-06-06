@@ -1,4 +1,4 @@
-FROM mangothecat/buildr:4.0.0
+FROM mangothecat/buildr:3.6.3
 
 # Python (3), and virtualenv
 RUN apt-get update -qq \
