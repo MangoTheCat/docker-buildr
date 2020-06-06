@@ -20,4 +20,4 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: mangothecat/buildr
         tag_with_ref: true
-        push: false
+        push: true
