@@ -15,10 +15,8 @@ RUN . /etc/environment \
 	  knitr \
 	  rmarkdown \
 	  yaml \
-	  reticulate \
-      tidyverse \
-      pagedown \
-      bookdown
+    pagedown \
+    bookdown
 
 # This sets the matplotlib backend to agg
 ENV MPLBACKEND "agg"
