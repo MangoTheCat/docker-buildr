@@ -1,4 +1,4 @@
-FROM mangothecat/buildr:3.6.2
+FROM mangothecat/buildr:4.0.0
 
 # Python (3), and virtualenv
 RUN apt-get update -qq \
@@ -12,15 +12,12 @@ RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificate
     libglib2.0-0 libxext6 libsm6 libxrender1 \
     git
 
-RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2019.10-Linux-x86_64.sh -O ~/anaconda.sh && \
+RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh -O ~/anaconda.sh && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm ~/anaconda.sh && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
     echo "conda activate base" >> ~/.bashrc
-
-# upgrade pandoc in conda too
-RUN  /opt/conda/bin/conda install -y -c conda-forge pandoc=2.7.3
 
 # reticulate R package
 RUN . /etc/environment \
