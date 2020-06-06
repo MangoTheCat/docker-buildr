@@ -18,8 +18,8 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: mangothecat/buildr
-        path: ./buildr
+        repository: mangothecat/${{ github.job }}
+        path: ./${{ github.job }}
         tag_with_ref: true
         push: true
 
@@ -29,13 +29,13 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-    - name: Build buildr-reticulate and publish to Docker Hub
+    - name: Build buildr-tidyverse and publish to Docker Hub
       uses: docker/build-push-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: mangothecat/buildr-tidyverse
-        path: ./buildr-tidyverse
+        repository: mangothecat/${{ github.job }}
+        path: ./${{ github.job }}
         tag_with_ref: true
         push: true
 
@@ -50,7 +50,7 @@ jobs:
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: mangothecat/buildr-reticulate
-        path: ./buildr-reticulate
+        repository: mangothecat/${{ github.job }}
+        path: ./${{ github.job }}
         tag_with_ref: true
         push: true
