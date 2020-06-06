@@ -1,4 +1,6 @@
-FROM mangothecat/buildr:3.6.3
+ARG R_VER
+
+FROM mangothecat/buildr:$R_VER
 
 RUN . /etc/environment \
   && install2.r --error \

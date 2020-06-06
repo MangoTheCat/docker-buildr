@@ -20,6 +20,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: mangothecat/${{ github.job }}
         path: ./${{ github.job }}
+        build_args: R_VER=${GITHUB_REF##*/}
         tag_with_ref: true
         push: true
 
@@ -36,6 +37,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: mangothecat/${{ github.job }}
         path: ./${{ github.job }}
+        build_args: R_VER=${GITHUB_REF##*/}
         tag_with_ref: true
         push: true
 
@@ -52,6 +54,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: mangothecat/${{ github.job }}
         path: ./${{ github.job }}
+        build_args: R_VER=${GITHUB_REF##*/}
         tag_with_ref: true
         push: true
   
@@ -68,5 +71,6 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
         repository: mangothecat/${{ github.job }}
         path: ./${{ github.job }}
+        build_args: R_VER=${GITHUB_REF##*/}
         tag_with_ref: true
         push: true
