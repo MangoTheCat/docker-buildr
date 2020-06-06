@@ -2,7 +2,7 @@ FROM mangothecat/buildr-reticulate:3.6.3
 
 # Debian chromium appears to be too old
 RUN apt-get update -qq \
-  && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+  && wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
   && dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
 
 # R package dependencies
