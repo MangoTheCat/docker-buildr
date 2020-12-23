@@ -1,8 +1,8 @@
-FROM mangothecat/buildr:3.6.3
+FROM mangothecat/buildr:4.0.1
 
 RUN . /etc/environment \
   && install2.r --error \
     --repos 'http://www.bioconductor.org/packages/release/bioc' \
-    --repos $MRAN \ 
+    --repos $MRAN \
     tidyverse \
     testthat
