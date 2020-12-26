@@ -22,6 +22,7 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_6
 # reticulate R package
 RUN . /etc/environment \
     && install2.r --error \
+      --repos 'https://cloud.r-project.org' \
       --repos 'http://www.bioconductor.org/packages/release/bioc' \
       --repos $MRAN \
 	  reticulate
