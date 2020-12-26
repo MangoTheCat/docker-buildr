@@ -1,10 +1,7 @@
-#ARG R_VER
-#FROM rocker/r-ver:3.6.3
-
-FROM rocker/r-ver:3.6.3
+FROM rocker/r-ver:4.0.1
 
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
-  libxml2-dev \ 
+  libxml2-dev \
   libssl-dev \
   libcurl4-openssl-dev \
   wget \
@@ -16,8 +13,9 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   && rm pandoc-2.7.3-1-amd64.deb \
   && . /etc/environment \
   && install2.r --error \
+    --repos 'https://cloud.r-project.org' \
     --repos 'http://www.bioconductor.org/packages/release/bioc' \
-    --repos $MRAN \ 
+    --repos $MRAN \
     remotes
 
 COPY build.sh /home/docker/

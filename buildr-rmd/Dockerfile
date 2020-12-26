@@ -1,4 +1,4 @@
-FROM mangothecat/buildr-reticulate:3.6.3
+FROM mangothecat/buildr-reticulate:4.0.1
 
 # Debian chromium appears to be too old
 RUN apt-get update -qq \
@@ -8,8 +8,9 @@ RUN apt-get update -qq \
 # R package dependencies
 RUN . /etc/environment \
     && install2.r --error \
+      --repos 'https://cloud.r-project.org' \
       --repos 'http://www.bioconductor.org/packages/release/bioc' \
-      --repos $MRAN \ 
+      --repos $MRAN \
 	  devtools \
 	  roxygen2 \
 	  knitr \
