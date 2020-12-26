@@ -13,6 +13,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   && rm pandoc-2.7.3-1-amd64.deb \
   && . /etc/environment \
   && install2.r --error \
+    --repos 'https://cloud.r-project.org' \
     --repos 'http://www.bioconductor.org/packages/release/bioc' \
     --repos $MRAN \
     remotes
