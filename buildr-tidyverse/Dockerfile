@@ -1,4 +1,4 @@
-FROM mangothecat/buildr:4.l.2
+FROM mangothecat/buildr:4.1.2
 
 RUN . /etc/environment \
   && install2.r --error \
