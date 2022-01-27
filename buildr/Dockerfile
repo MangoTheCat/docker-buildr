@@ -1,4 +1,4 @@
-FROM rocker/r-ver:4.0.3
+FROM rocker/r-ver:4.1.2
 
 RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   libxml2-dev \
@@ -8,9 +8,9 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
   subversion \
   git \
   zlib1g-dev \
-  && wget -q https://github.com/jgm/pandoc/releases/download/2.7.3/pandoc-2.7.3-1-amd64.deb \
-  && dpkg -i pandoc-2.7.3-1-amd64.deb \
-  && rm pandoc-2.7.3-1-amd64.deb \
+  && wget -q https://github.com/jgm/pandoc/releases/download/2.17.0.1/pandoc-2.17.0.1-1-amd64.deb \
+  && dpkg -i pandoc-2.17.0.1-1-amd64.deb \
+  && rm pandoc-2.17.0.1-1-amd64.deb \
   && . /etc/environment \
   && install2.r --error \
     --repos 'https://cloud.r-project.org' \
