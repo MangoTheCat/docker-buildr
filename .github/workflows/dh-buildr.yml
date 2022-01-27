@@ -12,7 +12,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Build buildr and publish to Docker Hub
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
@@ -28,7 +28,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Build buildr-tidyverse and publish to Docker Hub
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
@@ -44,7 +44,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Build buildr-reticulate and publish to Docker Hub
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
@@ -60,7 +60,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
     - name: Build buildr-rmd and publish to Docker Hub
-      uses: docker/build-push-action@v2
+      uses: docker/build-push-action@v1
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
