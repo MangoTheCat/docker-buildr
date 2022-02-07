@@ -1,4 +1,4 @@
-FROM mangothecat/buildr-tidyverse:4.0.3
+FROM mangothecat/buildr-tidyverse:4.1.2
 
 # Python (3), and virtualenv
 RUN apt-get update -qq \
@@ -12,7 +12,7 @@ RUN apt-get update --fix-missing && apt-get install -y wget bzip2 ca-certificate
     libglib2.0-0 libxext6 libsm6 libxrender1 \
     git
 
-RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh -O ~/anaconda.sh && \
+RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2021.11-Linux-x86_64.sh -O ~/anaconda.sh && \
     /bin/bash ~/anaconda.sh -b -p /opt/conda && \
     rm ~/anaconda.sh && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
@@ -22,7 +22,7 @@ RUN wget --quiet https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_6
 # reticulate R package
 RUN . /etc/environment \
     && install2.r --error \
-      --repos 'https://cloud.r-project.org' \
-      --repos 'http://www.bioconductor.org/packages/release/bioc' \
-      --repos $MRAN \
+      #--repos 'https://cloud.r-project.org' \
+      #--repos 'http://www.bioconductor.org/packages/release/bioc' \
+      #--repos $MRAN \
 	  reticulate
